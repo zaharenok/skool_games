@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 """
-Skool Games Deep Parser - Полный парсер с картинками и markdown
+Skool Games All Categories Parser - Собирает все категории и About страницы
+Сначала использует базовый парсер для всех категорий, затем собирает About для каждой группы
 """
 import asyncio
 import json
 import re
-import os
 from datetime import datetime
 from pathlib import Path
 from playwright.async_api import async_playwright
 from dataclasses import dataclass, asdict
 from typing import List, Optional
-from urllib.parse import urljoin
 import base64
 
 COOKIES = [
@@ -33,72 +32,36 @@ COOKIES = [
 
 
 @dataclass
-class GroupDeepInfo:
-    """Полная информация о группе"""
-    # Leaderboard
+class GroupInfo:
+    """Информация о группе"""
     position: int
     category: str
     category_emoji: str
     mrr_growth: str
     mrr_growth_value: float
-
-    # Main info
     name: str
     slug: str
     url: str
     about_url: str
-
-    # About page content
     about_description: str
     about_full_text: str
-
-    # Stats
     members: str
     members_count: int
     online: str
     online_count: int
-    admins_count: int
-
-    # Pricing
     price_display: str
     price_value: float
     is_free: bool
-    trial_available: bool
-
-    # Status
     is_public: bool
-    status_text: str
-
-    # Creator
     creator_name: str
     creator_url: str
-
-    # Media
     cover_image_url: str
     cover_image_base64: str
-    logo_url: str
-
-    # Additional
-    tags: List[str]
     features: List[str]
-
-    # Markdown
-    markdown_content: str
-
-    # Metadata
     scraped_at: str
 
 
-def sanitize_filename(name: str) -> str:
-    """Очистка имени для файла"""
-    name = name.replace('/', '-').replace('\\', '-')
-    name = re.sub(r'[<>:"|?*]', '', name)
-    name = name.replace(' ', '_')
-    return name[:100]
-
-
 def parse_number(value: str) -> int:
-    """Парсит число с суффиксом k"""
     if not value:
         return 0
     value = value.strip().upper().replace(',', '')
@@ -111,108 +74,23 @@ def parse_number(value: str) -> int:
 
 
 def extract_features(text: str) -> List[str]:
-    """Извлекает список фич из текста"""
     features = []
     lines = text.split('\n')
-
     for line in lines:
         line = line.strip()
-        # Ищем bullet points
-        if line.startswith(('•', '-', '*', '✅', '🚀', '📚', '🎓')):
-            feature = line.lstrip('•-*✅🚀📚🎓').strip()
+        if line.startswith(('•', '-', '*', '✅', '🚀', '📚', '🎓', '✓')):
+            feature = line.lstrip('•-*✅🚀📚🎓✓').strip()
             if feature and len(feature) > 5 and len(feature) < 200:
                 features.append(feature)
-
-    return features[:20]  # Максимум 20 фич
-
-
-def create_markdown(group: 'GroupDeepInfo') -> str:
-    """Создает markdown файл для группы"""
-    md = f"""# {group.category_emoji} {group.name}
-
-**Position:** #{group.position} in {group.category}
-**MRR Growth:** {group.mrr_growth}
-**URL:** [{group.url}]({group.url})
-
----
-
-## 📊 Statistics
-
-| Metric | Value |
-|--------|-------|
-| **Members** | {group.members} |
-| **Online** | {group.online} |
-| **Admins** | {group.admins_count} |
-| **Price** | {group.price_display} |
-| **Type** | {'Public' if group.is_public else 'Private'} |
-
----
-
-## 👤 Creator
-
-**Name:** {group.creator_name or 'N/A'}
-**Profile:** [{group.creator_url or 'N/A'}]({group.creator_url or '#'})
-
----
-
-## 📝 Description
-
-{group.about_description or group.about_full_text[:500] + '...' if group.about_full_text else 'No description available'}
-
-"""
-
-    if group.features:
-        md += "\n## ✨ Features\n\n"
-        for feature in group.features:
-            md += f"- {feature}\n"
-        md += "\n"
-
-    if group.cover_image_url:
-        md += f"\n## 🖼 Cover Image\n\n![{group.name}]({group.cover_image_url})\n\n"
-
-    md += f"""
----
-
-## 📄 Full About Text
-
-{group.about_full_text}
-
----
-
-**Scraped:** {group.scraped_at}
-**Source:** Skool Games Parser
-"""
-
-    return md
+    return features[:20]
 
 
-async def download_image(page, url: str, output_path: str) -> bool:
-    """Скачивает картинку"""
-    try:
-        response = await page.request.get(url)
-        if response.status == 200:
-            content = await response.body()
-            with open(output_path, 'wb') as f:
-                f.write(content)
-            return True
-    except Exception as e:
-        print(f"         ⚠ Image download error: {e}")
-    return False
-
-
-async def scrape_group_deep(page, group_url: str, position: int, category: str, emoji: str, mrr_growth: str, mrr_value: float, output_dir: Path) -> Optional[GroupDeepInfo]:
-    """Глубокий парсинг группы"""
-
+async def scrape_about_page(page, group_url: str) -> dict:
+    """Парсит About страницу группы"""
     about_url = f"{group_url}/about"
-    slug = group_url.split('/')[-1]
 
     try:
-        # Main page
-        await page.goto(group_url, timeout=15000)
-        await page.wait_for_timeout(1500)
-
-        # About page
-        await page.goto(about_url, timeout=15000)
+        await page.goto(about_url, timeout=20000)
         await page.wait_for_timeout(2000)
 
         data = await page.evaluate('''() => {
@@ -225,12 +103,9 @@ async def scrape_group_deep(page, group_url: str, position: int, category: str, 
                 admins: 0,
                 price: '',
                 isFree: false,
-                hasTrial: false,
                 isPublic: false,
                 creator: '',
-                coverImage: '',
-                logo: '',
-                slug: window.location.pathname.split('/').filter(Boolean).pop() || ''
+                coverImage: ''
             };
 
             // Meta description
@@ -271,10 +146,6 @@ async def scrape_group_deep(page, group_url: str, position: int, category: str, 
                 result.isFree = true;
             }
 
-            if (bodyText.includes('Free trial') || bodyText.includes('trial')) {
-                result.hasTrial = true;
-            }
-
             if (bodyText.includes('Public')) {
                 result.isPublic = true;
             }
@@ -282,9 +153,7 @@ async def scrape_group_deep(page, group_url: str, position: int, category: str, 
             // Price extraction
             const pricePatterns = [
                 /\\$([\\d\\.]+)\\s*\\/\\s*month/i,
-                /\\$([\\d\\.]+)\\s*per\\s*month/i,
-                /JOIN\\s*\\$([\\d\\.]+)/i,
-                /price.*?\\$([\\d\\.]+)/i
+                /JOIN\\s*\\$([\\d\\.]+)/i
             ];
 
             for (const pattern of pricePatterns) {
@@ -312,29 +181,28 @@ async def scrape_group_deep(page, group_url: str, position: int, category: str, 
             return result;
         }''')
 
-        # Creator URL
-        creator_url = ""
-        if data['creator']:
-            try:
-                # Кликаем на имя создателя для получения URL
-                creator_elements = await page.query_selector_all(f'text="{data["creator"]}"')
-                for el in creator_elements:
-                    href = await el.get_attribute('href')
-                    if href and '/@' in href:
-                        creator_url = urljoin('https://www.skool.com', href)
-                        break
-            except:
-                pass
+        return data
 
-        # Features
-        features = extract_features(data['fullText'])
+    except Exception as e:
+        print(f"         ⚠ About page error: {e}")
+        return {}
+
+
+async def scrape_group(page, group_url: str, position: int, category: str, emoji: str, mrr_growth: str, mrr_value: float, output_dir: Path) -> Optional[GroupInfo]:
+    """Парсит группу"""
+
+    try:
+        # Get About page data
+        about_data = await scrape_about_page(page, group_url)
+
+        if not about_data:
+            return None
 
         # Cover image base64
         cover_base64 = ""
-        cover_filename = ""
-        if data['coverImage']:
+        if about_data.get('coverImage'):
             try:
-                response = await page.request.get(data['coverImage'])
+                response = await page.request.get(about_data['coverImage'])
                 if response.status == 200:
                     content = await response.body()
                     cover_base64 = base64.b64encode(content).decode('utf-8')
@@ -342,64 +210,68 @@ async def scrape_group_deep(page, group_url: str, position: int, category: str, 
                     # Save image
                     images_dir = output_dir / 'images'
                     images_dir.mkdir(exist_ok=True)
-                    safe_name = sanitize_filename(data['title'])
-                    ext = data['coverImage'].split('.')[-1].split('?')[0]
+                    safe_name = re.sub(r'[<>:"|?*\\/]', '_', about_data['title'])
+                    safe_name = safe_name.replace(' ', '_')[:100]
+                    ext = about_data['coverImage'].split('.')[-1].split('?')[0]
+                    if ext.lower() not in ['png', 'jpg', 'jpeg', 'webp']:
+                        ext = 'png'
                     cover_filename = f"{safe_name}_cover.{ext}"
                     cover_path = images_dir / cover_filename
 
                     with open(cover_path, 'wb') as f:
                         f.write(content)
-                    print(f"         📸 Saved: {cover_filename}")
+                    print(f"         📸 {cover_filename}")
             except Exception as e:
-                print(f"         ⚠ Cover save error: {e}")
+                print(f"         ⚠ Image error: {e}")
 
-        # Create group info
-        group_info = GroupDeepInfo(
+        # Features
+        features = extract_features(about_data.get('fullText', ''))
+
+        # Creator URL
+        creator_url = ""
+        if about_data.get('creator'):
+            # Try to find creator link
+            try:
+                await page.goto(f"{group_url}/about", timeout=10000)
+                creator_links = await page.query_selector_all('a')
+                for link in creator_links:
+                    text = await link.text_content()
+                    href = await link.get_attribute('href')
+                    if text and about_data['creator'] in text and href and '/@' in href:
+                        creator_url = href if href.startswith('http') else f"https://www.skool.com{href}"
+                        break
+            except:
+                pass
+
+        group_info = GroupInfo(
             position=position,
             category=category,
             category_emoji=emoji,
             mrr_growth=mrr_growth,
             mrr_growth_value=mrr_value,
-            name=data['title'],
-            slug=data['slug'],
+            name=about_data.get('title', ''),
+            slug=group_url.split('/')[-1],
             url=group_url,
-            about_url=about_url,
-            about_description=data['description'] or '',
-            about_full_text=data['fullText'],
-            members=data['members'],
-            members_count=parse_number(data['members']),
-            online=data['online'],
-            online_count=parse_number(data['online']),
-            admins_count=data['admins'],
-            price_display=data['price'] or ('Free' if data['isFree'] else 'N/A'),
-            price_value=float(data['price'].replace('$', '')) if data['price'] and not data['isFree'] else 0,
-            is_free=data['isFree'],
-            trial_available=data['hasTrial'],
-            is_public=data['isPublic'],
-            status_text='Public' if data['isPublic'] else 'Private',
-            creator_name=data['creator'],
+            about_url=f"{group_url}/about",
+            about_description=about_data.get('description', ''),
+            about_full_text=about_data.get('fullText', ''),
+            members=about_data.get('members', '0'),
+            members_count=parse_number(about_data.get('members', '0')),
+            online=about_data.get('online', '0'),
+            online_count=parse_number(about_data.get('online', '0')),
+            price_display=about_data.get('price', '') or ('Free' if about_data.get('isFree') else 'N/A'),
+            price_value=float(about_data.get('price', '').replace('$', '')) if about_data.get('price') and not about_data.get('isFree') else 0,
+            is_free=about_data.get('isFree', False),
+            is_public=about_data.get('isPublic', False),
+            creator_name=about_data.get('creator', ''),
             creator_url=creator_url,
-            cover_image_url=data['coverImage'],
+            cover_image_url=about_data.get('coverImage', ''),
             cover_image_base64=cover_base64,
-            logo_url='',
-            tags=[],
             features=features,
-            markdown_content='',  # Will be set below
             scraped_at=datetime.now().isoformat()
         )
 
-        # Create markdown
-        group_info.markdown_content = create_markdown(group_info)
-
-        # Save markdown
-        md_dir = output_dir / 'markdown'
-        md_dir.mkdir(exist_ok=True)
-        safe_name = sanitize_filename(data['title'])
-        md_path = md_dir / f"{safe_name}.md"
-
-        with open(md_path, 'w', encoding='utf-8') as f:
-            f.write(group_info.markdown_content)
-        print(f"         📝 Saved: {safe_name}.md")
+        print(f"         ✓ {group_info.name}: {group_info.members} members | {group_info.price_display}")
 
         return group_info
 
@@ -408,15 +280,23 @@ async def scrape_group_deep(page, group_url: str, position: int, category: str, 
         return None
 
 
-async def parse_deep():
-    """Глубокий парсинг всех групп"""
+async def main():
+    """Главная функция"""
+
+    # Сначала запускаем базовый парсер для получения всех групп по всем категориям
+    print("🚀 Шаг 1: Получаем список всех групп через базовый парсер...")
+
+    # Импортируем базовый парсер
+    import sys
+    sys.path.insert(0, str(Path(__file__).parent))
+
+    # Запускаем базовый парсер
+    from skool_parser import parse_all_categories, COOKIES
 
     url = "https://www.skool.com/skoolers/-/games"
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     output_dir = Path(f"skool_data_{timestamp}")
     output_dir.mkdir(exist_ok=True)
-
-    print(f"📁 Output directory: {output_dir}")
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=False)
@@ -448,34 +328,27 @@ async def parse_deep():
             print(f"{'='*70}")
 
             try:
-                # Reload games page for each category
-                await page.goto(url, wait_until="networkidle")
+                # Reload page for each category
+                await page.goto(url, wait_until="domcontentloaded")
                 await page.wait_for_timeout(2000)
 
-                # Try to click using simple text selector first
-                try:
-                    await page.click(f'text="{category}"', timeout=3000)
-                    await page.wait_for_timeout(2000)
-                except:
-                    # Alternative: use JavaScript to find and click
-                    clicked = await page.evaluate('''(targetCategory) => {
-                        const buttons = Array.from(document.querySelectorAll('button, [role="button"], a'));
-                        for (const btn of buttons) {
-                            if (btn.textContent.includes(targetCategory)) {
-                                btn.click();
-                                return true;
-                            }
-                        }
-                        return false;
-                    }''', category)
-
-                    if clicked:
+                # Try to click category
+                clicked = False
+                for attempt in range(3):
+                    try:
+                        # Try clicking just the category name
+                        await page.click(f'text="{category}"', timeout=5000)
+                        clicked = True
                         await page.wait_for_timeout(2000)
-                    else:
-                        print(f"   ⚠ Could not click on {category}")
-                        continue
+                        break
+                    except:
+                        await page.wait_for_timeout(1000)
 
-                # See more
+                if not clicked:
+                    print(f"   ⚠ Could not click {category}, skipping...")
+                    continue
+
+                # Click See more if exists
                 see_more = await page.query_selector('text="See more"')
                 if see_more:
                     await see_more.click()
@@ -509,6 +382,8 @@ async def parse_deep():
                     return winners;
                 }''')
 
+                print(f"   Found {len(leaderboard)} winners")
+
                 # Get group links
                 group_links = await page.evaluate('''() => {
                     const links = Array.from(document.querySelectorAll('a'));
@@ -531,8 +406,8 @@ async def parse_deep():
 
                 name_to_url = {link['name'].lower(): link['url'] for link in group_links}
 
-                # Scrape groups
-                for winner in leaderboard[:10]:  # Limit for speed
+                # Scrape each group's About page
+                for winner in leaderboard[:20]:  # Limit to 20 per category for speed
                     community = winner['community']
                     position = winner['position']
                     mrr = winner['mrr']
@@ -555,7 +430,7 @@ async def parse_deep():
 
                     print(f"   [{position}] {community}")
 
-                    group_info = await scrape_group_deep(
+                    group_info = await scrape_group(
                         page, group_url, position, category, emoji, mrr, mrr_value, output_dir
                     )
 
@@ -565,48 +440,33 @@ async def parse_deep():
                     await page.wait_for_timeout(1500)
 
             except Exception as e:
-                print(f"   Error: {e}")
+                print(f"   Error in {category}: {e}")
                 continue
 
         await browser.close()
 
-        # Save JSON
+        # Save results
         output_data = {
             "scraped_at": datetime.now().isoformat(),
             "total_groups": len(all_groups),
-            "output_directory": str(output_dir),
+            "categories": sorted(list(set([g['category'] for g in all_groups]))),
             "groups": [asdict(g) for g in all_groups]
         }
 
-        json_file = output_dir / f"skool_deep_{timestamp}.json"
+        json_file = output_dir / f"skool_all_{timestamp}.json"
         with open(json_file, 'w', encoding='utf-8') as f:
             json.dump(output_data, f, ensure_ascii=False, indent=2)
-
-        # Create index markdown
-        index_md = f"# Skool Games Deep Data\n\n"
-        index_md += f"**Scraped:** {datetime.now().strftime('%Y-%m-%d %H:%M')}\n"
-        index_md += f"**Groups:** {len(all_groups)}\n\n"
-        index_md += "## All Groups\n\n"
-
-        for g in all_groups:
-            index_md += f"- [{g.category_emoji} {g.name}]({g.url}) - #{g.position} in {g.category}\n"
-            index_md += f"  - {g.members} members | {g.price_display} | {g.mrr_growth}\n\n"
-
-        with open(output_dir / "INDEX.md", 'w', encoding='utf-8') as f:
-            f.write(index_md)
 
         print(f"\n{'='*70}")
         print("✅ DONE!")
         print(f"{'='*70}")
         print(f"📁 Directory: {output_dir}")
         print(f"📊 Groups: {len(all_groups)}")
-        print(f"📝 Markdown: {output_dir / 'markdown'}")
-        print(f"🖼 Images: {output_dir / 'images'}")
+        print(f"📂 Categories: {output_data['categories']}")
         print(f"📄 JSON: {json_file}")
-        print(f"📋 Index: {output_dir / 'INDEX.md'}")
 
         return all_groups
 
 
 if __name__ == "__main__":
-    asyncio.run(parse_deep())
+    asyncio.run(main())

@@ -2,7 +2,6 @@
 Skool Games Deep Dashboard - Дашборд для изучения групп
 """
 import streamlit as st
-import pandas as pd
 import plotly.express as px
 from pathlib import Path
 import json
@@ -16,212 +15,328 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS
+# Custom CSS - улучшенный дизайн
 st.markdown("""
 <style>
-    .markdown-body {
-        font-size: 14px;
+    /* Главная страница */
+    .main-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 2rem;
+        border-radius: 15px;
+        margin-bottom: 2rem;
+        color: white;
+    }
+
+    /* Заголовок категории */
+    .category-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px 25px;
+        border-radius: 12px;
+        margin: 30px 0 20px 0;
+        font-size: 1.4em;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+    }
+
+    /* Описание */
+    .description-box {
+        background: #f8f9fa;
+        border-left: 4px solid #667eea;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 15px 0;
         line-height: 1.6;
     }
-    .group-card {
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 15px;
-        margin-bottom: 15px;
-        background: white;
+
+    /* Полный текст */
+    .full-text-box {
+        background: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 15px 0;
+        max-height: 400px;
+        overflow-y: auto;
+        white-space: pre-wrap;
+        line-height: 1.7;
     }
-    .stat-box {
-        background: #f0f2f6;
-        padding: 10px;
-        border-radius: 5px;
-        text-align: center;
+
+    /* Фичи */
+    .feature-item {
+        background: white;
+        border: 1px solid #e9ecef;
+        border-left: 3px solid #667eea;
+        border-radius: 6px;
+        padding: 10px 15px;
+        margin: 6px 0;
+        font-size: 0.95em;
     }
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🔍 Skool Games Deep Analysis")
+st.markdown('<div class="main-header"><h1>🔍 Skool Games Deep Analysis</h1></div>', unsafe_allow_html=True)
 
 # Load data
 @st.cache_data
 def load_deep_data():
     """Загружает глубокие данные о группах"""
     data_dir = Path('.')
-    json_files = list(data_dir.glob('skool_data_*/skool_deep_*.json'))
 
-    if not json_files:
-        return None, None
+    # Try enhanced data first (all categories with About pages)
+    enhanced_files = list(data_dir.glob('skool_data_*/skool_enhanced_*.json'))
 
-    latest_json = max(json_files, key=lambda p: p.stat().st_mtime)
+    # Fallback to deep data (some categories with About pages)
+    if not enhanced_files:
+        enhanced_files = list(data_dir.glob('skool_data_*/skool_deep_*.json'))
+
+    if not enhanced_files:
+        return None, None, None
+
+    latest_json = max(enhanced_files, key=lambda p: p.stat().st_mtime)
 
     with open(latest_json, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    # Find markdown directory
+    # Find directories
     md_dir = latest_json.parent.parent / 'markdown'
+    images_dir = latest_json.parent.parent / 'images'
 
-    return data['groups'], md_dir
+    # Extract groups from categories_data format
+    groups = []
+    if 'categories_data' in data:
+        for cat in data['categories_data']:
+            cat_emoji = cat.get('emoji', '')
+            for winner in cat.get('winners', []):
+                # Add emoji if missing
+                if 'category_emoji' not in winner and cat_emoji:
+                    winner['category_emoji'] = cat_emoji
+                groups.append(winner)
 
-groups, md_dir = load_deep_data()
+    return groups, md_dir, images_dir
+
+groups, md_dir, images_dir = load_deep_data()
 
 if not groups:
     st.warning("Нет данных. Запустите `python3 skool_deep_parser.py` сначала.")
+    st.info("💡 Для парсинга всех категорий может потребоваться несколько минут.")
     st.stop()
 
-# Convert to DataFrame
-df = pd.DataFrame([{
-    'name': g['name'],
-    'category': g['category'],
-    'emoji': g['category_emoji'],
-    'position': g['position'],
-    'url': g['url'],
-    'members': g['members_count'],
-    'online': g['online_count'],
-    'price': g['price_value'],
-    'is_free': g['is_free'],
-    'is_public': g['is_public'],
-    'mrr_growth': g['mrr_growth_value'],
-    'creator': g['creator_name'],
-    'description': g['about_description'][:200],
-    'features': len(g.get('features', [])),
-    'has_markdown': True
-} for g in groups])
+# Convert to list
+groups_list = []
+for g in groups:
+    groups_list.append({
+        'name': g.get('name', g.get('community', '')),
+        'category': g.get('category', ''),
+        'emoji': g.get('category_emoji', g.get('emoji', '')),
+        'position': g.get('position', 0),
+        'url': g.get('url', ''),
+        'about_url': g.get('about_url', ''),
+        'members': g.get('members_count', 0),
+        'online': g.get('online_count', 0),
+        'price': g.get('price_value', 0),
+        'is_free': g.get('is_free', False),
+        'is_public': g.get('is_public', False),
+        'mrr_growth': g.get('mrr_growth_value', 0),
+        'creator': g.get('creator_name', ''),
+        'description': g.get('about_description', ''),
+        'full_text': g.get('about_full_text', ''),
+        'features': g.get('features', []),
+        'cover_image': g.get('cover_image_url', ''),
+        'cover_base64': g.get('cover_image_base64', '')
+    })
 
 # Sidebar
-st.sidebar.header("Фильтры")
+st.sidebar.header("🎯 Фильтры")
 
-# Category filter
-all_cats = ['All'] + sorted(df['category'].unique())
-selected_cat = st.sidebar.selectbox('Категория', all_cats)
-
-# Price filter
-price_filter = st.sidebar.radio('Тип', ['All', 'Free', 'Paid'])
-
-# Members filter
-min_members = st.sidebar.slider('Мин. участников', 0, int(df['members'].max()), 0)
+categories = sorted(list(set([g['category'] for g in groups_list])))
+selected_cat = st.sidebar.selectbox('Категория', ['All'] + categories)
+price_filter = st.sidebar.radio('Тип', ['All', 'Free', 'Paid'], horizontal=True)
+max_members = max([g['members'] for g in groups_list])
+min_members = st.sidebar.slider('Мин. участников', 0, max_members, 0)
 
 # Apply filters
-filtered_df = df.copy()
-
-if selected_cat != 'All':
-    filtered_df = filtered_df[filtered_df['category'] == selected_cat]
-
-if price_filter == 'Free':
-    filtered_df = filtered_df[filtered_df['is_free'] == True]
-elif price_filter == 'Paid':
-    filtered_df = filtered_df[filtered_df['is_free'] == False]
-
-if min_members > 0:
-    filtered_df = filtered_df[filtered_df['members'] >= min_members]
+filtered_groups = []
+for g in groups_list:
+    if selected_cat != 'All' and g['category'] != selected_cat:
+        continue
+    if price_filter == 'Free' and not g['is_free']:
+        continue
+    if price_filter == 'Paid' and g['is_free']:
+        continue
+    if g['members'] < min_members:
+        continue
+    filtered_groups.append(g)
 
 # Stats
-st.header("📊 Статистика")
+st.header("📊 Общая статистика")
 
-col1, col2, col3, col4 = st.columns(4)
+# Show actual categories count
+actual_categories = sorted(list(set([g['category'] for g in groups_list])))
+total_categories_all = 9  # All possible categories
 
+col1, col2, col3, col4, col5 = st.columns(5)
 with col1:
-    st.metric("Групп", len(filtered_df))
+    st.metric("📁 Категорий", f"{len(actual_categories)}/{total_categories_all}")
 with col2:
-    st.metric("Участников", f"{filtered_df['members'].sum():,.0f}")
+    st.metric("📁 Групп", len(filtered_groups))
 with col3:
-    avg_price = filtered_df[filtered_df['price'] > 0]['price'].mean() if len(filtered_df[filtered_df['price'] > 0]) > 0 else 0
-    st.metric("Ср. цена", f"${avg_price:.0f}")
+    total_members = sum([g['members'] for g in filtered_groups])
+    st.metric("👥 Участников", f"{total_members:,.0f}")
 with col4:
-    st.metric("MRR рост", f"${filtered_df['mrr_growth'].sum():,.0f}")
+    paid_groups = [g for g in filtered_groups if g['price'] > 0]
+    avg_price = sum([g['price'] for g in paid_groups]) / len(paid_groups) if paid_groups else 0
+    st.metric("💰 Ср. цена", f"${avg_price:.0f}")
+with col5:
+    total_mrr = sum([g['mrr_growth'] for g in filtered_groups])
+    st.metric("📈 MRR рост", f"${total_mrr:,.0f}")
+
+# Info if not all categories
+if len(actual_categories) < total_categories_all:
+    st.info(f"ℹ️ В данных только {len(actual_categories)} из {total_categories_all} категорий. Для сбора всех категорий запустите:")
+    st.code("python3 skool_deep_parser.py")
 
 # Charts
 col1, col2 = st.columns(2)
 
 with col1:
-    st.subheader("Распределение по категориям")
-    cat_counts = filtered_df['category'].value_counts().reset_index()
-    cat_counts.columns = ['Category', 'Count']
-    fig = px.pie(cat_counts, values='Count', names='Category', hole=0.4)
-    st.plotly_chart(fig, use_container_width=True)
+    st.subheader("🎯 Распределение по категориям")
+    cat_counts = {}
+    for g in filtered_groups:
+        cat_counts[g['category']] = cat_counts.get(g['category'], 0) + 1
+
+    if cat_counts:
+        categories_list = list(cat_counts.keys())
+        fig = px.pie(
+            values=list(cat_counts.values()),
+            names=categories_list,
+            hole=0.4,
+            color=categories_list,
+            color_discrete_map={
+                cat: px.colors.qualitative.Set3[i % len(px.colors.qualitative.Set3)]
+                for i, cat in enumerate(categories_list)
+            }
+        )
+        fig.update_traces(textposition='inside', textinfo='percent+label')
+        fig.update_layout(showlegend=True, height=400, margin=dict(t=30, b=30, l=30, r=30))
+        st.plotly_chart(fig, width="stretch")
 
 with col2:
-    st.subheader("Цены")
-    price_data = filtered_df[filtered_df['price'] > 0][['name', 'price']].sort_values('price', ascending=True).head(15)
-    if not price_data.empty:
-        fig = px.bar(price_data, x='price', y='name', orientation='h',
-                     title='Топ-15 по цене', labels={'price': 'Цена ($)', 'name': 'Группа'})
-        st.plotly_chart(fig, use_container_width=True)
+    st.subheader("💎 Топ-15 по цене")
+    price_data = [g for g in filtered_groups if g['price'] > 0]
+    price_data = sorted(price_data, key=lambda x: x['price'])[:15]
+
+    if price_data:
+        fig = px.bar(
+            x=[g['price'] for g in price_data],
+            y=[g['name'] for g in price_data],
+            orientation='h',
+            color=[g['price'] for g in price_data],
+            color_continuous_scale='Viridis',
+            labels={'x': 'Цена ($)', 'y': 'Группа'},
+            height=400
+        )
+        fig.update_layout(yaxis={'categoryorder': 'total ascending'}, margin=dict(t=30, b=30, l=20, r=30))
+        st.plotly_chart(fig, width="stretch")
     else:
         st.info("Нет данных о ценах")
 
 # Group list
-st.header("📋 Список групп")
+st.header("📋 Группы")
 
 # Search
-search = st.text_input("🔍 Поиск по названию или описанию")
+search = st.text_input("🔍 Поиск по названию, описанию или фичам")
 
 if search:
-    search_df = filtered_df[
-        filtered_df['name'].str.contains(search, case=False, na=False) |
-        filtered_df['description'].str.contains(search, case=False, na=False)
+    search_lower = search.lower()
+    filtered_groups = [
+        g for g in filtered_groups
+        if search_lower in g['name'].lower() or
+           search_lower in g['description'].lower() or
+           any(search_lower in f.lower() for f in g['features'])
     ]
+
+# Group by category
+if selected_cat == 'All':
+    categories_to_show = sorted(list(set([g['category'] for g in filtered_groups])))
 else:
-    search_df = filtered_df
+    categories_to_show = [selected_cat]
 
-# Display groups
-for _, row in search_df.iterrows():
-    with st.expander(f"{row['emoji']} {row['position']}. {row['name']} ({row['category']})"):
-        col1, col2 = st.columns([2, 1])
+if not categories_to_show:
+    st.info("ℹ️ В данных только категории Hobbies. Для сбора всех категорий запустите:")
+    st.code("python3 skool_deep_parser.py")
 
-        with col1:
-            st.markdown(f"**URL:** [{row['name']}]({row['url']})")
-            st.markdown(f"**Создатель:** {row['creator']}")
-            st.markdown(f"**Описание:** {row['description']}...")
+for category in categories_to_show:
+    cat_groups = [g for g in filtered_groups if g['category'] == category]
 
-            # Load and display markdown if exists
-            if md_dir:
-                safe_name = re.sub(r'[<>:"|?*\\/]', '_', row['name'])
-                safe_name = safe_name.replace(' ', '_')[:100]
-                md_file = md_dir / f"{safe_name}.md"
+    if not cat_groups:
+        continue
 
-                if md_file.exists():
-                    with open(md_file, 'r', encoding='utf-8') as f:
-                        md_content = f.read()
-                    st.markdown("---")
-                    st.markdown(md_content)
+    # Category header
+    cat_emoji = cat_groups[0]['emoji']
+    st.markdown(f'<div class="category-header">{cat_emoji} {category} • {len(cat_groups)} групп</div>', unsafe_allow_html=True)
 
-        with col2:
-            st.markdown("### 📊 Статистика")
-            st.metric("Участников", row['members'])
-            st.metric("Онлайн", row['online'])
-            st.metric("Цена", "Free" if row['is_free'] else f"${row['price']:.0f}")
-            st.metric("MRR рост", f"${row['mrr_growth']:.0f}")
-            st.metric("Фичи", row['features'])
+    # Display groups
+    for g in sorted(cat_groups, key=lambda x: x['position']):
+        with st.expander(f"#{g['position']} {g['name']}", expanded=False):
+            # Cover image
+            if g['cover_base64']:
+                img_data = f"data:image/png;base64,{g['cover_base64']}"
+                st.image(img_data, width="stretch")
+            elif g['cover_image']:
+                st.image(g['cover_image'], width="stretch")
 
-# Export
-st.header("💾 Экспорт")
+            # Main info
+            col1, col2 = st.columns([3, 1])
 
-col1, col2, col3 = st.columns(3)
+            with col1:
+                # URL and name
+                st.markdown(f"### 🔗 [{g['name']}]({g['url']})")
+                if g['about_url']:
+                    st.markdown(f"📄 [About страница]({g['about_url']})")
 
-with col1:
-    csv = filtered_df.to_csv(index=False, encoding='utf-8-sig')
-    st.download_button("📥 CSV", csv, "skool_groups.csv", "text/csv")
+                # Creator
+                if g['creator']:
+                    st.markdown(f"👤 **Создатель:** {g['creator']}")
 
-with col2:
-    json_data = json.dumps([g for g in groups if g['name'] in filtered_df['name'].values],
-                           ensure_ascii=False, indent=2)
-    st.download_button("📥 JSON", json_data, "skool_groups.json", "application/json")
+                # Short description
+                if g['description']:
+                    st.markdown('<div class="description-box">', unsafe_allow_html=True)
+                    st.markdown(g['description'])
+                    st.markdown('</div>', unsafe_allow_html=True)
 
-with col3:
-    # Create combined markdown
-    combined_md = "# Skool Groups Export\n\n"
-    for _, row in search_df.iterrows():
-        combined_md += f"## {row['name']}\n\n"
-        combined_md += f"- **Category:** {row['category']}\n"
-        combined_md += f"- **Position:** #{row['position']}\n"
-        combined_md += f"- **Members:** {row['members']}\n"
-        combined_md += f"- **Price:** {'Free' if row['is_free'] else f'${row[\"price\"]:.0f}'}\n"
-        combined_md += f"- **URL:** {row['url']}\n\n"
-        if md_dir:
-            safe_name = re.sub(r'[<>:"|?*\\/]', '_', row['name'])
-            safe_name = safe_name.replace(' ', '_')[:100]
-            md_file = md_dir / f"{safe_name}.md"
-            if md_file.exists():
-                with open(md_file, 'r', encoding='utf-8') as f:
-                    combined_md += f.read() + "\n\n---\n\n"
+                # Features
+                if g['features']:
+                    st.markdown("#### ✨ Возможности:")
+                    for feature in g['features'][:5]:
+                        st.markdown(f"<div class='feature-item'>✓ {feature}</div>", unsafe_allow_html=True)
+                    if len(g['features']) > 5:
+                        st.caption(f"...и еще {len(g['features']) - 5} функций")
 
-    st.download_button("📥 Markdown", combined_md, "skool_groups.md", "text/markdown")
+                # Full text in tab
+                if g['full_text']:
+                    with st.expander("📖 Полное описание с About страницы"):
+                        st.markdown('<div class="full-text-box">', unsafe_allow_html=True)
+                        st.markdown(g['full_text'])
+                        st.markdown('</div>', unsafe_allow_html=True)
+
+            with col2:
+                st.markdown("### 📊")
+                st.markdown(f"## {g['members']:,}")
+                st.caption("участников")
+
+                st.markdown(f"## {g['online']}")
+                st.caption("онлайн")
+
+                price_display = "Free" if g['is_free'] else f"${g['price']:.0f}"
+                st.markdown(f"## {price_display}")
+                st.caption("цена")
+
+                st.markdown(f"## ${g['mrr_growth']:.0f}")
+                st.caption("MRR рост")
+
+                # Status badge
+                status_badge = "🌍 Public" if g['is_public'] else "🔒 Private"
+                st.markdown(f"**{status_badge}**")
+
+            st.markdown("---")

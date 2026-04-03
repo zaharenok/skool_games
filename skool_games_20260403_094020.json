@@ -1,0 +1,1859 @@
+{
+  "scraped_at": "2026-04-03T09:40:20.290806",
+  "categories": [
+    {
+      "name": "Hobbies",
+      "emoji": "🎨",
+      "winners": [
+        {
+          "position": 1,
+          "name": "Yuslaidy Ruano",
+          "community": "Yuslaidy Ruano Nails Academy",
+          "mrr_growth": "+$752",
+          "mrr_growth_value": 752.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 2,
+          "name": "Krishna Lewin",
+          "community": "Direct Booking Accelerator",
+          "mrr_growth": "+$200",
+          "mrr_growth_value": 200.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 3,
+          "name": "David Mendoza",
+          "community": "Spanish Enablers Pro",
+          "mrr_growth": "+$157",
+          "mrr_growth_value": 157.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 4,
+          "name": "Jana Oblak",
+          "community": "BentoSad Studio",
+          "mrr_growth": "+$139",
+          "mrr_growth_value": 139.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 5,
+          "name": "Felicia Slater",
+          "community": "Felicia Inspire Teaches",
+          "mrr_growth": "+$128",
+          "mrr_growth_value": 128.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 6,
+          "name": "David Lozano",
+          "community": "Héroes del Diseño®",
+          "mrr_growth": "+$117",
+          "mrr_growth_value": 117.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 7,
+          "name": "Megan Robinson",
+          "community": "⭐",
+          "mrr_growth": "+$116",
+          "mrr_growth_value": 116.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 8,
+          "name": "Claire Todd",
+          "community": "Next Level English",
+          "mrr_growth": "+$108",
+          "mrr_growth_value": 108.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 9,
+          "name": "Deion Smith",
+          "community": "The Acting Mentorship",
+          "mrr_growth": "+$100",
+          "mrr_growth_value": 100.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 10,
+          "name": "Maryna Skyba",
+          "community": "Fashion Community",
+          "mrr_growth": "+$100",
+          "mrr_growth_value": 100.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 11,
+          "name": "Joshua Laborde",
+          "community": "Tuning and Reverse Engineering",
+          "mrr_growth": "+$100",
+          "mrr_growth_value": 100.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 12,
+          "name": "Chris Lawson",
+          "community": "Technician Find Community",
+          "mrr_growth": "+$100",
+          "mrr_growth_value": 100.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 13,
+          "name": "Yaser Quesada Perez",
+          "community": "Check!",
+          "mrr_growth": "+$100",
+          "mrr_growth_value": 100.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 14,
+          "name": "David Jurado Muñoz",
+          "community": "🚀",
+          "mrr_growth": "+$100",
+          "mrr_growth_value": 100.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 15,
+          "name": "Andy Friedman",
+          "community": "Comedy Society",
+          "mrr_growth": "+$95",
+          "mrr_growth_value": 95.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 16,
+          "name": "David Stem",
+          "community": "The Writer's Forge",
+          "mrr_growth": "+$94",
+          "mrr_growth_value": 94.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 17,
+          "name": "Tony Marsh",
+          "community": "LinguaBLOX Language Learning",
+          "mrr_growth": "+$94",
+          "mrr_growth_value": 94.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 18,
+          "name": "Armin Navabi",
+          "community": "⭐",
+          "mrr_growth": "+$94",
+          "mrr_growth_value": 94.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 19,
+          "name": "Sir Cobalot",
+          "community": "Living Earth Structures",
+          "mrr_growth": "+$85",
+          "mrr_growth_value": 85.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        },
+        {
+          "position": 20,
+          "name": "Matt Archer",
+          "community": "Matt vs Japan’s Immersion Dojo",
+          "mrr_growth": "+$80",
+          "mrr_growth_value": 80.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Hobbies"
+        }
+      ]
+    },
+    {
+      "name": "Music",
+      "emoji": "🎸",
+      "winners": [
+        {
+          "position": 1,
+          "name": "Boyka Pliesterbecker",
+          "community": "Boyka Unreleased",
+          "mrr_growth": "+$489",
+          "mrr_growth_value": 489.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 2,
+          "name": "Jesse Carroll",
+          "community": "🚀",
+          "mrr_growth": "+$288",
+          "mrr_growth_value": 288.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 3,
+          "name": "Khirye Tyler",
+          "community": "⭐",
+          "mrr_growth": "+$180",
+          "mrr_growth_value": 180.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 4,
+          "name": "Chris Tyson",
+          "community": "⭐",
+          "mrr_growth": "+$156",
+          "mrr_growth_value": 156.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 5,
+          "name": "Víctor Álvarez Alegría",
+          "community": "The Global Brass Collective",
+          "mrr_growth": "+$147",
+          "mrr_growth_value": 147.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 6,
+          "name": "Anthony Clint Jr.",
+          "community": "⭐",
+          "mrr_growth": "+$97",
+          "mrr_growth_value": 97.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 7,
+          "name": "Eduardo Serrano",
+          "community": "🎓EduardosMusic Academy",
+          "mrr_growth": "+$94",
+          "mrr_growth_value": 94.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 8,
+          "name": "Eduardo Faour",
+          "community": "Gato Jazz Pro 🐱",
+          "mrr_growth": "+$86",
+          "mrr_growth_value": 86.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 9,
+          "name": "Udi Glaser",
+          "community": "Learn Guitar By Creating Music",
+          "mrr_growth": "+$75",
+          "mrr_growth_value": 75.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 10,
+          "name": "Jake Galambos",
+          "community": "⭐",
+          "mrr_growth": "+$55",
+          "mrr_growth_value": 55.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 11,
+          "name": "Matthew Antonio Perri",
+          "community": "Confident Conducting",
+          "mrr_growth": "+$54",
+          "mrr_growth_value": 54.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 12,
+          "name": "K.e. On The Track",
+          "community": "Platinum Level University",
+          "mrr_growth": "+$53",
+          "mrr_growth_value": 53.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 13,
+          "name": "Beni Ociepka",
+          "community": "Sample Academy",
+          "mrr_growth": "+$50",
+          "mrr_growth_value": 50.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 14,
+          "name": "Priority Music Group",
+          "community": "Priority Music Academy",
+          "mrr_growth": "+$50",
+          "mrr_growth_value": 50.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 15,
+          "name": "Károly László Kiss",
+          "community": "Szabad Zenetanulás Exkluzív",
+          "mrr_growth": "+$49",
+          "mrr_growth_value": 49.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 16,
+          "name": "Thozamile Mnguni",
+          "community": "The Modern DJ Academy",
+          "mrr_growth": "+$49",
+          "mrr_growth_value": 49.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 17,
+          "name": "Thomas Hooten",
+          "community": "Trumpet Mastery Tier 1",
+          "mrr_growth": "+$49",
+          "mrr_growth_value": 49.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 18,
+          "name": "Leah Murphy",
+          "community": "⭐",
+          "mrr_growth": "+$45",
+          "mrr_growth_value": 45.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 19,
+          "name": "Chas Evans",
+          "community": "Chas Evans - Guitar 101",
+          "mrr_growth": "+$45",
+          "mrr_growth_value": 45.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        },
+        {
+          "position": 20,
+          "name": "Isaiah St Jean",
+          "community": "Artist Academy 🎓 🎵 (Music)",
+          "mrr_growth": "+$45",
+          "mrr_growth_value": 45.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Music"
+        }
+      ]
+    },
+    {
+      "name": "Money",
+      "emoji": "💰",
+      "winners": [
+        {
+          "position": 1,
+          "name": "Adri Kastel",
+          "community": "🚀",
+          "mrr_growth": "+$3,468",
+          "mrr_growth_value": 3468.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 2,
+          "name": "Celeste Rivarola",
+          "community": "🚀",
+          "mrr_growth": "+$3,272",
+          "mrr_growth_value": 3272.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 3,
+          "name": "Ben Oberg",
+          "community": "👑",
+          "mrr_growth": "+$3,103",
+          "mrr_growth_value": 3103.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 4,
+          "name": "Tugo Onesixteen",
+          "community": "🚀",
+          "mrr_growth": "+$2,207",
+          "mrr_growth_value": 2207.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 5,
+          "name": "Charlie Morgan",
+          "community": "👑",
+          "mrr_growth": "+$1,567",
+          "mrr_growth_value": 1567.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 6,
+          "name": "Evan Rugen",
+          "community": "👑",
+          "mrr_growth": "+$1,552",
+          "mrr_growth_value": 1552.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 7,
+          "name": "Herc Magnus",
+          "community": "AI SEO | Digital Lease Assets",
+          "mrr_growth": "+$1,500",
+          "mrr_growth_value": 1500.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 8,
+          "name": "Itgel Chinbaatar",
+          "community": "👑",
+          "mrr_growth": "+$1,489",
+          "mrr_growth_value": 1489.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 9,
+          "name": "Logan Sendle",
+          "community": "🥷",
+          "mrr_growth": "+$1,300",
+          "mrr_growth_value": 1300.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 10,
+          "name": "Ciera Frazier",
+          "community": "🚀",
+          "mrr_growth": "+$1,246",
+          "mrr_growth_value": 1246.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 11,
+          "name": "Rafel Mayol",
+          "community": "IA para Skool",
+          "mrr_growth": "+$1,199",
+          "mrr_growth_value": 1199.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 12,
+          "name": "Connor McCluskey",
+          "community": "Quick Trading",
+          "mrr_growth": "+$1,003",
+          "mrr_growth_value": 1003.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 13,
+          "name": "Monssef Aourabi",
+          "community": "MMofficialClub",
+          "mrr_growth": "+$969",
+          "mrr_growth_value": 969.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 14,
+          "name": "Elijah Porter",
+          "community": "👑",
+          "mrr_growth": "+$891",
+          "mrr_growth_value": 891.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 15,
+          "name": "Whitney Cumbo",
+          "community": "🚀",
+          "mrr_growth": "+$881",
+          "mrr_growth_value": 881.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 16,
+          "name": "Terry Arter",
+          "community": "Rich Off Options",
+          "mrr_growth": "+$846",
+          "mrr_growth_value": 846.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 17,
+          "name": "Andro Kinghorn",
+          "community": "🚀",
+          "mrr_growth": "+$833",
+          "mrr_growth_value": 833.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 18,
+          "name": "Spencer Pawliw",
+          "community": "🐐",
+          "mrr_growth": "+$784",
+          "mrr_growth_value": 784.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 19,
+          "name": "Dominic Camany",
+          "community": "🚀",
+          "mrr_growth": "+$783",
+          "mrr_growth_value": 783.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        },
+        {
+          "position": 20,
+          "name": "Gurpreet Gill",
+          "community": "🚀",
+          "mrr_growth": "+$776",
+          "mrr_growth_value": 776.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Money"
+        }
+      ]
+    },
+    {
+      "name": "Spirituality",
+      "emoji": "🙏",
+      "winners": [
+        {
+          "position": 1,
+          "name": "Samuel Lee",
+          "community": "💎",
+          "mrr_growth": "+$1,518",
+          "mrr_growth_value": 1518.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 2,
+          "name": "Banah Winn",
+          "community": "🚀",
+          "mrr_growth": "+$365",
+          "mrr_growth_value": 365.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 3,
+          "name": "Leo Light",
+          "community": "Beyond Light Academy",
+          "mrr_growth": "+$298",
+          "mrr_growth_value": 298.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 4,
+          "name": "Jerome Martin",
+          "community": "✨ Light Body Boot Camp",
+          "mrr_growth": "+$225",
+          "mrr_growth_value": 225.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 5,
+          "name": "Anadasia Rose",
+          "community": "Angel Archetype Society",
+          "mrr_growth": "+$212",
+          "mrr_growth_value": 212.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 6,
+          "name": "Christina Ciara",
+          "community": "⭐",
+          "mrr_growth": "+$194",
+          "mrr_growth_value": 194.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 7,
+          "name": "Primordial Witch",
+          "community": "🚀",
+          "mrr_growth": "+$191",
+          "mrr_growth_value": 191.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 8,
+          "name": "Anne Marie Pizarro",
+          "community": "Akashic Light School",
+          "mrr_growth": "+$172",
+          "mrr_growth_value": 172.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 9,
+          "name": "Stef Kootenay",
+          "community": "Spirit School",
+          "mrr_growth": "+$167",
+          "mrr_growth_value": 167.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 10,
+          "name": "Jeffery Williams",
+          "community": "Divine Health School",
+          "mrr_growth": "+$165",
+          "mrr_growth_value": 165.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 11,
+          "name": "Meredith Pavlidis",
+          "community": "Galactic Alchemy Girl",
+          "mrr_growth": "+$132",
+          "mrr_growth_value": 132.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 12,
+          "name": "Damien Maya",
+          "community": "Le Sanctuaire - Damien Maya",
+          "mrr_growth": "+$115",
+          "mrr_growth_value": 115.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 13,
+          "name": "Ayanda Stood",
+          "community": "SoulCraft",
+          "mrr_growth": "+$110",
+          "mrr_growth_value": 110.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 14,
+          "name": "Micki Morris",
+          "community": "🚀",
+          "mrr_growth": "+$110",
+          "mrr_growth_value": 110.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 15,
+          "name": "Eloheem Ali",
+          "community": "Philosophy of Order Studios",
+          "mrr_growth": "+$100",
+          "mrr_growth_value": 100.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 16,
+          "name": "Kalel Williams",
+          "community": "ACADEMIA NIDO DE ÁGUILAS 🦅💎",
+          "mrr_growth": "+$99",
+          "mrr_growth_value": 99.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 17,
+          "name": "Danielle Freeman",
+          "community": "Empath 2 Mystic: The Academy",
+          "mrr_growth": "+$99",
+          "mrr_growth_value": 99.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 18,
+          "name": "Mark Haughton",
+          "community": "🚀",
+          "mrr_growth": "+$98",
+          "mrr_growth_value": 98.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 19,
+          "name": "Amier Ervin",
+          "community": "The Regulation Lab",
+          "mrr_growth": "+$97",
+          "mrr_growth_value": 97.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        },
+        {
+          "position": 20,
+          "name": "Scott Haug",
+          "community": "🚀",
+          "mrr_growth": "+$97",
+          "mrr_growth_value": 97.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Spirituality"
+        }
+      ]
+    },
+    {
+      "name": "Tech",
+      "emoji": "💻",
+      "winners": [
+        {
+          "position": 1,
+          "name": "Brooke Wright",
+          "community": "🚀",
+          "mrr_growth": "+$3,066",
+          "mrr_growth_value": 3066.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 2,
+          "name": "Alex Finn",
+          "community": "💎",
+          "mrr_growth": "+$2,686",
+          "mrr_growth_value": 2686.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 3,
+          "name": "Jake Van Clief",
+          "community": "🚀",
+          "mrr_growth": "+$2,327",
+          "mrr_growth_value": 2327.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 4,
+          "name": "Simon Scrapes",
+          "community": "👑",
+          "mrr_growth": "+$1,952",
+          "mrr_growth_value": 1952.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 5,
+          "name": "Chase Hannegan",
+          "community": "👑",
+          "mrr_growth": "+$1,721",
+          "mrr_growth_value": 1721.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 6,
+          "name": "Beau Johnson",
+          "community": "🚀",
+          "mrr_growth": "+$1,485",
+          "mrr_growth_value": 1485.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 7,
+          "name": "Daniel Riley",
+          "community": "💎",
+          "mrr_growth": "+$1,299",
+          "mrr_growth_value": 1299.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 8,
+          "name": "Jay E",
+          "community": "👑",
+          "mrr_growth": "+$1,242",
+          "mrr_growth_value": 1242.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 9,
+          "name": "Andy Han",
+          "community": "𝗔𝗜 𝗩𝗜𝗗𝗘𝗢 𝗦𝗞𝗢𝗢𝗟",
+          "mrr_growth": "+$1,062",
+          "mrr_growth_value": 1062.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 10,
+          "name": "Brock Mesarich",
+          "community": "🚀",
+          "mrr_growth": "+$987",
+          "mrr_growth_value": 987.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 11,
+          "name": "Cezless de chez Cadralis",
+          "community": "NovaMind Ai",
+          "mrr_growth": "+$975",
+          "mrr_growth_value": 975.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 12,
+          "name": "Camilo Castaneda",
+          "community": "Ad Creators Lab",
+          "mrr_growth": "+$954",
+          "mrr_growth_value": 954.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 13,
+          "name": "Noe Varner",
+          "community": "👑",
+          "mrr_growth": "+$726",
+          "mrr_growth_value": 726.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 14,
+          "name": "Caleb Ulku",
+          "community": "👑",
+          "mrr_growth": "+$600",
+          "mrr_growth_value": 600.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 15,
+          "name": "Abdurahman Abukar",
+          "community": "💎",
+          "mrr_growth": "+$600",
+          "mrr_growth_value": 600.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 16,
+          "name": "Caleb Kruse",
+          "community": "🚀",
+          "mrr_growth": "+$569",
+          "mrr_growth_value": 569.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 17,
+          "name": "Marcin Teodoru",
+          "community": "🚀",
+          "mrr_growth": "+$510",
+          "mrr_growth_value": 510.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 18,
+          "name": "Luke Donoghue",
+          "community": "🚀",
+          "mrr_growth": "+$500",
+          "mrr_growth_value": 500.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 19,
+          "name": "Garrett F",
+          "community": "🚀",
+          "mrr_growth": "+$485",
+          "mrr_growth_value": 485.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        },
+        {
+          "position": 20,
+          "name": "Rourke Sefton-Minns",
+          "community": "💎",
+          "mrr_growth": "+$485",
+          "mrr_growth_value": 485.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Tech"
+        }
+      ]
+    },
+    {
+      "name": "Health",
+      "emoji": "🥕",
+      "winners": [
+        {
+          "position": 1,
+          "name": "Oscar Patel",
+          "community": "💎",
+          "mrr_growth": "+$1,755",
+          "mrr_growth_value": 1755.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 2,
+          "name": "P D",
+          "community": "🚀",
+          "mrr_growth": "+$1,457",
+          "mrr_growth_value": 1457.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 3,
+          "name": "Busta Calisthenics",
+          "community": "Busta Calisthenics Academy",
+          "mrr_growth": "+$273",
+          "mrr_growth_value": 273.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 4,
+          "name": "Orel Ben Yosef",
+          "community": "המשטר",
+          "mrr_growth": "+$244",
+          "mrr_growth_value": 244.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 5,
+          "name": "Taigen Hegberg",
+          "community": "Unfreeze Your Body",
+          "mrr_growth": "+$232",
+          "mrr_growth_value": 232.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 6,
+          "name": "Kiki Nelson",
+          "community": "Plantiful Life",
+          "mrr_growth": "+$220",
+          "mrr_growth_value": 220.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 7,
+          "name": "Francis Allard",
+          "community": "Le ATS Lab",
+          "mrr_growth": "+$194",
+          "mrr_growth_value": 194.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 8,
+          "name": "Noemi García Espinosa",
+          "community": "Club \"Locas del Suelo Pélvico\"",
+          "mrr_growth": "+$180",
+          "mrr_growth_value": 180.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 9,
+          "name": "Pedro Mier Arce",
+          "community": "🚀",
+          "mrr_growth": "+$172",
+          "mrr_growth_value": 172.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 10,
+          "name": "Malin and Daniel",
+          "community": "Calixpert",
+          "mrr_growth": "+$168",
+          "mrr_growth_value": 168.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 11,
+          "name": "Danielle Ruccia",
+          "community": "🚀",
+          "mrr_growth": "+$166",
+          "mrr_growth_value": 166.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 12,
+          "name": "Joaquín Ansaldi",
+          "community": "🚀",
+          "mrr_growth": "+$164",
+          "mrr_growth_value": 164.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 13,
+          "name": "Yuuwri French Toji",
+          "community": "Toji Academy",
+          "mrr_growth": "+$145",
+          "mrr_growth_value": 145.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 14,
+          "name": "OneMinute Anabolics",
+          "community": "OneMinAnabolic's 1:1 Server",
+          "mrr_growth": "+$140",
+          "mrr_growth_value": 140.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 15,
+          "name": "Francisca Duarte",
+          "community": "🚀",
+          "mrr_growth": "+$123",
+          "mrr_growth_value": 123.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 16,
+          "name": "Line Smith",
+          "community": "Derma Habits",
+          "mrr_growth": "+$121",
+          "mrr_growth_value": 121.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 17,
+          "name": "Nathalie Fauquette",
+          "community": "Nathalie Fauquette",
+          "mrr_growth": "+$120",
+          "mrr_growth_value": 120.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 18,
+          "name": "Warrior Makers",
+          "community": "⭐",
+          "mrr_growth": "+$118",
+          "mrr_growth_value": 118.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 19,
+          "name": "Jessica London",
+          "community": "Pelvic Floor & Core Collective",
+          "mrr_growth": "+$117",
+          "mrr_growth_value": 117.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        },
+        {
+          "position": 20,
+          "name": "Chakra Chow",
+          "community": "CC",
+          "mrr_growth": "+$114",
+          "mrr_growth_value": 114.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Health"
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "emoji": "⚽",
+      "winners": [
+        {
+          "position": 1,
+          "name": "Mustafa Meekins",
+          "community": "OLD GUARD BOXING",
+          "mrr_growth": "+$237",
+          "mrr_growth_value": 237.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 2,
+          "name": "Drini Gjoka",
+          "community": "⭐",
+          "mrr_growth": "+$165",
+          "mrr_growth_value": 165.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 3,
+          "name": "Alexandru Coci",
+          "community": "Ocean Swim School",
+          "mrr_growth": "+$156",
+          "mrr_growth_value": 156.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 4,
+          "name": "Frank Lee",
+          "community": "LBP Football Community +",
+          "mrr_growth": "+$150",
+          "mrr_growth_value": 150.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 5,
+          "name": "Oliver Betts",
+          "community": "⭐",
+          "mrr_growth": "+$148",
+          "mrr_growth_value": 148.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 6,
+          "name": "Rory Brown",
+          "community": "Padel Mobility",
+          "mrr_growth": "+$140",
+          "mrr_growth_value": 140.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 7,
+          "name": "Alex Lato",
+          "community": "Karate4Dogs Learning Hub",
+          "mrr_growth": "+$138",
+          "mrr_growth_value": 138.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 8,
+          "name": "Adam Lusby",
+          "community": "Enhanced Performance Academy",
+          "mrr_growth": "+$135",
+          "mrr_growth_value": 135.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 9,
+          "name": "Daniel Cooper",
+          "community": "Danny Cooper Basketball",
+          "mrr_growth": "+$129",
+          "mrr_growth_value": 129.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 10,
+          "name": "Josh Saunders",
+          "community": "👑",
+          "mrr_growth": "+$120",
+          "mrr_growth_value": 120.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 11,
+          "name": "The Picklr",
+          "community": "Pickleball w Hayden Patriquin",
+          "mrr_growth": "+$120",
+          "mrr_growth_value": 120.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 12,
+          "name": "Reid Ouse",
+          "community": "Catalyst Training by SAVI",
+          "mrr_growth": "+$110",
+          "mrr_growth_value": 110.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 13,
+          "name": "Stephen Bilbo",
+          "community": "The Team Room",
+          "mrr_growth": "+$105",
+          "mrr_growth_value": 105.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 14,
+          "name": "Shea Hammond",
+          "community": "Size and Violence",
+          "mrr_growth": "+$100",
+          "mrr_growth_value": 100.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 15,
+          "name": "Mark Cascio",
+          "community": "👑",
+          "mrr_growth": "+$83",
+          "mrr_growth_value": 83.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 16,
+          "name": "Jorge Zamora",
+          "community": "CHARRERÍA PARA TODOS!",
+          "mrr_growth": "+$75",
+          "mrr_growth_value": 75.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 17,
+          "name": "Dane Cvetkovic",
+          "community": "The Practice HQ - Dane Golf",
+          "mrr_growth": "+$70",
+          "mrr_growth_value": 70.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 18,
+          "name": "Samuel Vavrik",
+          "community": "Calisthenics School 📈",
+          "mrr_growth": "+$58",
+          "mrr_growth_value": 58.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 19,
+          "name": "Gabe Pico",
+          "community": "American Football IQ",
+          "mrr_growth": "+$57",
+          "mrr_growth_value": 57.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        },
+        {
+          "position": 20,
+          "name": "Bulletproof Cycling",
+          "community": "👑",
+          "mrr_growth": "+$50",
+          "mrr_growth_value": 50.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Sports"
+        }
+      ]
+    },
+    {
+      "name": "Self-improvement",
+      "emoji": "📚",
+      "winners": [
+        {
+          "position": 1,
+          "name": "Veronica White",
+          "community": "👑",
+          "mrr_growth": "+$2,918",
+          "mrr_growth_value": 2918.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 2,
+          "name": "Timon Kriek",
+          "community": "GIIFTD",
+          "mrr_growth": "+$2,742",
+          "mrr_growth_value": 2742.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 3,
+          "name": "Alex B",
+          "community": "🚀",
+          "mrr_growth": "+$1,400",
+          "mrr_growth_value": 1400.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 4,
+          "name": "Ahmed Al Qahtani",
+          "community": "🚀",
+          "mrr_growth": "+$970",
+          "mrr_growth_value": 970.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 5,
+          "name": "Michael Bar",
+          "community": "👑",
+          "mrr_growth": "+$969",
+          "mrr_growth_value": 969.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 6,
+          "name": "Dominique Pointer",
+          "community": "NIQUExFIT Elite Accountability",
+          "mrr_growth": "+$735",
+          "mrr_growth_value": 735.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 7,
+          "name": "Patricia Perales",
+          "community": "🚀",
+          "mrr_growth": "+$517",
+          "mrr_growth_value": 517.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 8,
+          "name": "James Lu",
+          "community": "🚀",
+          "mrr_growth": "+$396",
+          "mrr_growth_value": 396.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 9,
+          "name": "Andy Smith",
+          "community": "The Alcohol Free Living Club",
+          "mrr_growth": "+$301",
+          "mrr_growth_value": 301.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 10,
+          "name": "Karen Ardila",
+          "community": "Código Renacer 💛",
+          "mrr_growth": "+$294",
+          "mrr_growth_value": 294.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 11,
+          "name": "Pau Calado",
+          "community": "DCM Community",
+          "mrr_growth": "+$278",
+          "mrr_growth_value": 278.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 12,
+          "name": "Latoya Okeia",
+          "community": "The Divine Ones Walking Club",
+          "mrr_growth": "+$259",
+          "mrr_growth_value": 259.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 13,
+          "name": "Joseph Lustica",
+          "community": "🚀",
+          "mrr_growth": "+$250",
+          "mrr_growth_value": 250.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 14,
+          "name": "Alex Suport",
+          "community": "POTI Fă-te bine de la rădăcină",
+          "mrr_growth": "+$248",
+          "mrr_growth_value": 248.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 15,
+          "name": "Karla Elizondo",
+          "community": "The Penthouse Frequency",
+          "mrr_growth": "+$245",
+          "mrr_growth_value": 245.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 16,
+          "name": "Reece Chandler",
+          "community": "Energymaxxing with Reecebrah",
+          "mrr_growth": "+$240",
+          "mrr_growth_value": 240.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 17,
+          "name": "Billy Carson",
+          "community": "👑",
+          "mrr_growth": "+$238",
+          "mrr_growth_value": 238.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 18,
+          "name": "Giovanni The Coach",
+          "community": "Social Skills Decoded™",
+          "mrr_growth": "+$229",
+          "mrr_growth_value": 229.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 19,
+          "name": "Tah Whitty",
+          "community": "The YOUniverse",
+          "mrr_growth": "+$201",
+          "mrr_growth_value": 201.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        },
+        {
+          "position": 20,
+          "name": "Luisa Zayas",
+          "community": "Zayas Academy",
+          "mrr_growth": "+$200",
+          "mrr_growth_value": 200.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Self-improvement"
+        }
+      ]
+    },
+    {
+      "name": "Relationships",
+      "emoji": "❤️",
+      "winners": [
+        {
+          "position": 1,
+          "name": "Coach Christian",
+          "community": "BetterMan Academy",
+          "mrr_growth": "+$123",
+          "mrr_growth_value": 123.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 2,
+          "name": "Gracie Pleschourt",
+          "community": "⭐",
+          "mrr_growth": "+$100",
+          "mrr_growth_value": 100.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 3,
+          "name": "Rob Kowalski",
+          "community": "Man of Options",
+          "mrr_growth": "+$99",
+          "mrr_growth_value": 99.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 4,
+          "name": "Shaun Michael",
+          "community": "⭐",
+          "mrr_growth": "+$98",
+          "mrr_growth_value": 98.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 5,
+          "name": "Dylan James",
+          "community": "The Social Man Brotherhood",
+          "mrr_growth": "+$75",
+          "mrr_growth_value": 75.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 6,
+          "name": "Samantha Boss",
+          "community": "👑",
+          "mrr_growth": "+$50",
+          "mrr_growth_value": 50.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 7,
+          "name": "Danny ChadGPT",
+          "community": "ChadGPT - AI for Dating",
+          "mrr_growth": "+$49",
+          "mrr_growth_value": 49.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 8,
+          "name": "Aaron Sharif",
+          "community": "Always Attracting",
+          "mrr_growth": "+$47",
+          "mrr_growth_value": 47.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 9,
+          "name": "Lauren Hunter",
+          "community": "Quietly Becoming",
+          "mrr_growth": "+$42",
+          "mrr_growth_value": 42.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 10,
+          "name": "Sharif Joynson",
+          "community": "Led by Love Community",
+          "mrr_growth": "+$37",
+          "mrr_growth_value": 37.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 11,
+          "name": "Diego Day",
+          "community": "The One Percent",
+          "mrr_growth": "+$30",
+          "mrr_growth_value": 30.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 12,
+          "name": "David Collins",
+          "community": "The 50+ Ontario Club",
+          "mrr_growth": "+$28",
+          "mrr_growth_value": 28.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 13,
+          "name": "Maxamillian Dutton",
+          "community": "Before the Apple - Genesis 90",
+          "mrr_growth": "+$27",
+          "mrr_growth_value": 27.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 14,
+          "name": "Delainey Schubert",
+          "community": "Play to Read Plus+",
+          "mrr_growth": "+$26",
+          "mrr_growth_value": 26.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 15,
+          "name": "Mert Diloba",
+          "community": "Aşk Kampüsü Club",
+          "mrr_growth": "+$25",
+          "mrr_growth_value": 25.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 16,
+          "name": "Olivier Raherimandimby",
+          "community": "Opération Reconquête",
+          "mrr_growth": "+$19",
+          "mrr_growth_value": 19.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 17,
+          "name": "C.s. Joseph",
+          "community": "C.S. Joseph",
+          "mrr_growth": "+$19",
+          "mrr_growth_value": 19.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 18,
+          "name": "Irina Baker",
+          "community": "Radiant Connections Network",
+          "mrr_growth": "+$12",
+          "mrr_growth_value": 12.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 19,
+          "name": "Tim Atyeo",
+          "community": "Behavioural Intelligence Lab",
+          "mrr_growth": "+$10",
+          "mrr_growth_value": 10.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        },
+        {
+          "position": 20,
+          "name": "Nicole Moore",
+          "community": "Secure Woman Club",
+          "mrr_growth": "+$7",
+          "mrr_growth_value": 7.0,
+          "current_mrr": "",
+          "current_mrr_value": 0.0,
+          "category": "Relationships"
+        }
+      ]
+    }
+  ]
+}
